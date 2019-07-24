@@ -24,13 +24,34 @@ body {
   display: flex;
   justify-content: space-between;
 
+  height: 100%;
+
 }
 
+.App-foot .Menu-item {
+  padding-top: .066667rem;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: .32rem;
+}
 
-.Menu-icon {
+.App-foot .Menu-icon {
+  margin-right: 0;
   font-size: .4rem;
+  margin-bottom: .066667rem
 }
 
-.ant-menu-horizontal {
-  border: none;
+.ant-menu-horizontal>.ant-menu-item:hover,
+.ant-menu-horizontal>.ant-menu-submenu:hover,
+.ant-menu-horizontal>.ant-menu-item-active,
+.ant-menu-horizontal>.ant-menu-submenu-active,
+.ant-menu-horizontal>.ant-menu-item-open,
+.ant-menu-horizontal>.ant-menu-submenu-open,
+.ant-menu-horizontal>.ant-menu-item-selected,
+.ant-menu-horizontal>.ant-menu-submenu-selected {
+  color: #f00;
+  border-bottom: none;
 }

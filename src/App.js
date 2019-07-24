@@ -20,7 +20,7 @@ class App extends Component{
     super();
     this.state={
       navs:[
-        {name:"Discover",path:"/discover",ico:"Discover",title:"发现"},
+        {name:"Discover",path:"/discover",ico:"fire",title:"发现"},
         {name:"List",path:"/list",ico:"bars",title:"目的地"},
         {name:"Cart",path:"/cart",ico:"shopping-cart",title:"订单"},
         {name:"Mine",path:"/mine",ico:"user",title:"我的"}
@@ -57,11 +57,11 @@ class App extends Component{
           </Switch>
         </div>
         <div className="App-foot">
-          <Menu className="Menu" onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" >
+          <Menu  className="Menu" onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" >
           {
             navs.map(item=>(              
                 <Menu.Item  className="Menu-item" key={item.name} >
-                  <Icon type={item.ico} />
+                  <Icon className="Menu-icon" type={item.ico} />
                   {item.title}
                 </Menu.Item>
             ))
