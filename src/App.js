@@ -10,7 +10,7 @@ import 'antd/dist/antd.css';
 import Discover from './pages/Discover';
 import List from './pages/List';
 import Cart from './pages/Cart';
-import Mine from './pages/Mine';
+import Mine from './pages/Mine/index.jsx';
 import Goods from './pages/Goods';
 
 
@@ -42,9 +42,10 @@ class App extends Component{
   }
 
   render(){
-    let {navs} = this.state;
+    let {navs,current} = this.state;
     return(
       <div className="App">
+
         <div className="App-main">
          {/* 路由信息 */}
           <Switch>
@@ -56,8 +57,9 @@ class App extends Component{
             <Redirect from='/' to='/discover' exact></Redirect>
           </Switch>
         </div>
+
         <div className="App-foot">
-          <Menu  className="Menu" onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" >
+          <Menu  className="Menu" onClick={this.handleClick} selectedKeys={current} mode="horizontal" >
           {
             navs.map(item=>(              
                 <Menu.Item  className="Menu-item" key={item.name} >
@@ -67,6 +69,7 @@ class App extends Component{
             ))
           }
           </Menu>
+
         </div>     
       </div>
     )
