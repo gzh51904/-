@@ -13,6 +13,8 @@ import Cart from './pages/Cart';
 import Mine from './pages/Mine';
 import Goods from './pages/Goods';
 
+
+import "./App.css"
 class App extends Component{
   constructor(){
     super();
@@ -55,10 +57,10 @@ class App extends Component{
           </Switch>
         </div>
         <div className="App-foot">
-          <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
+          <Menu className="Menu" onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal" >
           {
             navs.map(item=>(              
-                <Menu.Item key={item.name}>
+                <Menu.Item  className="Menu-item" key={item.name} >
                   <Icon type={item.ico} />
                   {item.title}
                 </Menu.Item>
