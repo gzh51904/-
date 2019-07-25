@@ -41,9 +41,16 @@ class My extends React.Component {
                 type: "right"
             }]
         }
+        this.loginout=this.loginout.bind(this)
+    }
+    loginout(){
+        localStorage.removeItem("username");
+        localStorage.removeItem("phone");
+
+        this.props.history.push("/mine")
     }
     render() {
-        let { phone, my } = this.state;
+        let { phone, my, call } = this.state;
         // console.log(my);
 
         return <div id="My">
@@ -77,7 +84,7 @@ class My extends React.Component {
                     </div>
                 </div>
             </div>
-            <p>我的</p>
+            <p className="text-index">我的</p>
             <div className="my">
                 <div className="content">
                     <div>
@@ -99,7 +106,28 @@ class My extends React.Component {
                     <img style={{ width: "100%" }} src="https://spics.hitour.cc/7e9082a282658c88fa3ca8fdc9815d55.png?imageView2/1/w/828/h/104" alt="" />
                 </div>
             </div>
-            <p>联系玩途</p>
+            <p className="text-index">联系玩途</p>
+            <div className="call">
+                <div className="content">
+                    <ul>
+                        {
+                            call.map((item,idx) => {
+                                return <li className=" call-item-list" key={idx}>
+                                    <span className="icon"><Icon type={item.icon}></Icon></span>
+                                    <div>
+                                        <p style={{color:"#000"}}>{item.title}</p>
+                                        <p>{item.language}</p>
+                                    </div>
+                                    <span className="type"><Icon type={item.type}></Icon></span>
+                                </li>
+                            })
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div className="logout" onClick={this.loginout.bind(this)}>
+                退出登录
+            </div>
         </div>
     }
 }
