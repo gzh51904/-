@@ -39,6 +39,14 @@ class Mine extends Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.login = this.login.bind(this);
+        this.clearUsername = this.clearUsername.bind(this);
+
+    }
+    componentWillMount() {
+        let key = localStorage.getItem("username");
+        if (key) {
+            this.props.history.push("/my")
+        }
     }
     handleChange(name) {
         let value = this.refs[name].state
@@ -49,7 +57,6 @@ class Mine extends Component {
                 return false;
             }
         }
-
         // 判断验证码是否正确
         if (name === "code") {
             if (this.refs[name].state.value === codes) {
@@ -67,17 +74,23 @@ class Mine extends Component {
     async login() {
         let { value } = this.state.username
         if (this.state.username === "" || this.state.code === "") {
-            return alert("请输入完整信息")
+            return console.log("请输入完整信息")
         }
         // 点击注册发起请求查找数据库有没有该账号
         let find = await axios.get("http://18.139.229.218:1904/reg/check?" + "username=" + value);
-        // console.log(find.data.code);
         if (find.data.code === 1000) {
+            let { data } = await axios.post("http://18.139.229.218:1904/login", { username: value });
+            localStorage.setItem("username", data.data)
+            localStorage.setItem("phone",value)
+
             this.props.history.push("/my");
         } else {
             await axios.post("http://18.139.229.218:1904/reg", { username: value });
             this.props.history.push("/my");
         }
+    }
+    clearUsername(name) {
+
     }
     random() {
         alert("10秒后验证码在控制台")
@@ -86,7 +99,6 @@ class Mine extends Component {
         }, 2000);
     }
     render() {
-        // let { username, code } = this.state
         return <div id="Mine">
             <div className="Mine-content">
                 <div className="Mine-back">
@@ -94,7 +106,7 @@ class Mine extends Component {
                 </div>
                 <div className="Mine-title"><h2>手机号快捷登录</h2></div>
                 <div className="Mine-input">
-                    <div><Input ref='username' onBlur={val => { this.handleChange("username") }} className="Mine-username Mine-text" suffix={<Icon type="close" style={{ color: 'rgba(0,0,0,.45)' }} />} placeholder={this.state.msg[0].phone} /></div>
+                    <div><Input ref='username' onBlur={val => { this.handleChange("username") }} className="Mine-username Mine-text" suffix={<Icon onClick={val => { this.clearUsername("username") }} type="close" style={{ color: 'rgba(0,0,0,.45)' }} />} placeholder={this.state.msg[0].phone} /></div>
                     <div className="Mine-get">
                         <Input ref='code' onBlur={val => { this.handleChange("code") }} className="Mine-password Mine-text" placeholder={this.state.msg[0].yzm} />
                         <div className="Mine-getrandom" onClick={this.random}>获取验证码</div>

@@ -14,6 +14,8 @@ import Mine from './pages/Mine/index.jsx';
 import Goods from './pages/Goods';
 import My from "./pages/Mine/My/index.jsx";
 
+import Routers from './routerMap.jsx'
+
 import "./App.css"
 class App extends Component{
   constructor(){
@@ -23,13 +25,19 @@ class App extends Component{
         {name:"Discover",path:"/discover",ico:"fire",title:"发现"},
         {name:"List",path:"/list",ico:"bars",title:"目的地"},
         {name:"Cart",path:"/cart",ico:"shopping-cart",title:"订单"},
-        {name:"Mine",path:"/mine",ico:"user",title:"我的"}
+        {name:"My",path:"/mine",ico:"user",title:"我的"}
       ],
       current:'Discover'
     }
   this.handleClick=this.handleClick.bind(this);  
   }
-
+  componentWillMount() {
+    // 刷新高亮
+    let url = this.props.location.pathname.slice(1, 2).toUpperCase() + this.props.location.pathname.slice(2)
+    this.setState({
+      current: url
+    })
+  }
   handleClick(data){
     // console.log(data);
     this.setState({
@@ -43,12 +51,22 @@ class App extends Component{
 
   render(){
     let {navs,current} = this.state;
+    let token = this.props.token;
     return(
       <div className="App">
 
         <div className="App-main">
          {/* 路由信息 */}
           <Switch>
+            {/* 路由拦截 */}
+          {/* {Routers.map((item, index) => {
+              return <Route key={index} path={item.path} exact render={props =>
+                (!item.auth ? (<item.component {...props} />) : (token ? <item.component {...props} /> : <Redirect to={{
+                  pathname: '/mine',
+                  state: { from: props.location }
+                }} />)
+                )} />
+            })} */}
             <Route path="/discover" component={Discover} />
             <Route path="/list" component={List} />
             <Route path="/cart" component={Cart} />
