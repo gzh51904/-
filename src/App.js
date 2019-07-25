@@ -12,7 +12,7 @@ import List from './pages/List';
 import Cart from './pages/Cart';
 import Mine from './pages/Mine/index.jsx';
 import Goods from './pages/Goods';
-
+import My from "./pages/Mine/My/index.jsx";
 
 import "./App.css"
 class App extends Component{
@@ -54,12 +54,13 @@ class App extends Component{
             <Route path="/cart" component={Cart} />
             <Route path="/mine" component={Mine} />     
             <Route path="/goods:id" component={Goods}></Route>
+            <Route path="/my" component={My} />
             <Redirect from='/' to='/discover' exact></Redirect>
           </Switch>
         </div>
 
         <div className="App-foot">
-          <Menu  className="Menu" onClick={this.handleClick} selectedKeys={current} mode="horizontal" >
+          <Menu  className="Menu" onClick={this.handleClick} selectedKeys={[current]} mode="horizontal" >
           {
             navs.map(item=>(              
                 <Menu.Item  className="Menu-item" key={item.name} >
