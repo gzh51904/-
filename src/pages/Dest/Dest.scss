@@ -1,0 +1,140 @@
+.box {
+    background: #EFEFEF;
+    height: 100%;
+
+    .box_img {
+        position: relative;
+
+        .img {
+            width: 100%;
+            height: 4.666667rem;
+        }
+
+        .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bolder;
+
+            h4 {
+                color: white;
+                font-size: .533333rem;
+
+            }
+
+            p {
+                font-size: .4rem;
+            }
+
+        }
+    }
+
+
+    .tab_select {
+        width: 100%;
+        height: .933333rem;
+        line-height: .933333rem;
+        background: white;
+
+        .tab_span {
+            float: left;
+            margin: 0 .266667rem;
+
+        }
+
+        .tab_span_select {
+            border-bottom: .026667rem solid black;
+            font-weight: bolder;
+        }
+    }
+
+    .products {
+        margin: .266667rem .266667rem;
+
+
+        height: auto;
+        overflow: hidden;
+
+        .products_img {
+            width: 2rem;
+            height: 2rem;
+            float: left;
+        }
+
+        .alias {
+
+            height: 2.4rem;
+            padding: .133333rem;
+            margin: .133333rem .133333rem;
+            background: white;
+            width: 100%;
+
+            h4 {
+                font-size: .266667rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                padding-left: .166667rem;
+            }
+
+            .products_price {
+                color: red;
+                position: relative;
+                bottom: -0.233333rem !important;
+            }
+
+            span {
+                margin: 0 .133333rem;
+                background: rgb(242, 242, 242);
+                font-size: .2rem;
+            }
+        }
+    }
+
+    .plane {
+        width: 100%;
+        height: 4.5rem;
+
+        .title {
+            width: 100%;
+            margin-top: .2rem;
+            font-size: .2rem;
+            font-weight: bolder;
+            text-align: center;
+            float: left;
+        }
+
+        span {
+            display: block;
+            padding: 0 0.453333rem;
+            height: 0.8rem;
+            line-height: 0.8rem;
+            text-align: center;
+            border: 0.026667rem solid #000;
+            border-radius: 1.333333rem;
+            float: right;
+            margin-right: .333333rem;
+            
+        }
+    }
+
+
+}
+
+
+.none {
+    display: none;
+}
+
+.loading {
+    width: 1.333333rem;
+    height: auto;
+    position: absolute;
+    margin-top: 50%;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);
+}
