@@ -98,30 +98,14 @@ return Promise.reject(error);
             <Route path="/cart" component={Cart} />
             <Route path="/mine" component={Mine} />     
             <Route path="/goods:id" component={Goods}></Route>
-<<<<<<< HEAD
             <Route path="/cartlist/:id" component={Cartlist}></Route>
-=======
             <Route path="/my" component={My} />
             <Route path="/peo" component={Peo} />
 
->>>>>>> 199f1f0a190b8d45709c670bdf58b3a34e14ea98
             <Redirect from='/' to='/discover' exact></Redirect>
           </Switch>
         </div>
 
-<<<<<<< HEAD
-        <div className="App-foot">
-          <Menu  className="Menu" onClick={this.handleClick} selectedKeys={[current]} mode="horizontal" >
-          {
-            navs.map(item=>(              
-                <Menu.Item  className="Menu-item" key={item.name} >
-                  <Icon className="Menu-icon" type={item.ico} />
-                  {item.title}
-                </Menu.Item>
-            ))
-          }
-          </Menu>
-=======
         <div className="App-foot">{
             hideFooter ? null :<Menu  className="Menu" onClick={this.handleClick} selectedKeys={[current]} mode="horizontal" >
             {
@@ -135,7 +119,6 @@ return Promise.reject(error);
             </Menu>
         }
           
->>>>>>> 199f1f0a190b8d45709c670bdf58b3a34e14ea98
 
         </div>     
       </div>
