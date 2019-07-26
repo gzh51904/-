@@ -1,0 +1,112 @@
+
+.order-head{
+    padding: 0.533333rem;
+    background: #fff;
+    border-bottom: 0.026667rem solid #eee;
+}
+.order-title{
+    font-size: 37px;
+    color: #333;
+    font-weight: bold;
+}
+.gp{
+    color: #999;
+    font-size: 24px;
+    margin-top: 0.133333rem;
+    margin-bottom: 0px;
+}
+.order-num-date{
+    border-bottom: 0.026667rem solid #eee;
+    padding-bottom: 0.566667rem;
+    margin-bottom: 0.366667rem;
+}
+.cartbody-flex{
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+}
+.order-color{
+    margin-bottom: 0.16rem;
+    color: #f02f45;
+    font-size: 42px;
+    line-height: 42px;
+}
+.wei{
+    font-size:35px;
+}
+.time{
+    font-size: 25px;
+
+}
+
+.ant-steps{
+    line-height: 4.5;
+}
+.ant-steps-item-description {
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 24px;
+}
+.step{
+    margin-top: 50px;
+}
+.pay-btn{
+    display: block;
+    margin-top: 0.266667rem;
+    height: 1rem;
+    line-height: 1rem;
+    background: #f02f45;
+    color: #fff;
+    font-size: 0.426667rem;
+    border-radius: 0.106667rem;
+    text-align: center;
+}
+.order-group {
+    padding-top: 0.6rem;
+    padding: 0.266667rem;
+   
+}
+.order-dess{
+    font-size: 0.38rem;
+    padding-left: 0.32rem;
+    padding-bottom: 0.4rem;
+    font-weight: bold;
+}
+.order-list-row{
+    padding-bottom: 20px;
+}
+.order-order .order-p{
+    position: relative;
+    color: #333;
+    font-size: 30px;
+}
+.order-p .anticon svg {
+    // float: left;
+    width: 0.3rem;
+    height: 0.3rem;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    left: -0.6rem;
+    top: 1px;
+   
+}
+.order-order{
+    // float: left;
+    margin-bottom: 0.2rem; 
+    padding: 0.4rem 0;
+    padding-right: 0.533333rem;
+    padding-left: 1.066667rem;
+    background: #fff;
+     border: 0.026667rem solid #eee;
+    border-radius: 0.053333rem;
+}
+.order-order p{
+    margin-bottom: 0px;
+    font-size: 25px;
+    color: #999;
+}
+.tell{
+    border-top: 0.026667rem solid #f5f5f5;
+}
