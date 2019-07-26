@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 // import './App.css';
 import {Switch,Route,Redirect,withRouter} from "react-router-dom";
-import { Menu, Icon,Badge  } from 'antd';
+import { Menu, Icon } from 'antd';
 // 由于 antd 组件的默认文案是英文，所以需要修改为中文
 import 'moment/locale/zh-cn';
 import 'antd/dist/antd.css';
@@ -12,6 +12,8 @@ import List from './pages/List';
 import Cart from './pages/Cart';
 import Mine from './pages/Mine/index.jsx';
 import Goods from './pages/Goods';
+import Dest from './pages/Dest';
+import Product from  './pages/Product';
 import Cartlist from './pages/Cartlist';
 import My from "./pages/Mine/My/index.jsx";
 import Peo from "./pages/Mine/My/Address/index.jsx"
@@ -98,6 +100,8 @@ return Promise.reject(error);
             <Route path="/cart" component={Cart} />
             <Route path="/mine" component={Mine} />     
             <Route path="/goods:id" component={Goods}></Route>
+            <Route path="/dest" component={Dest}></Route>
+            <Route path="/product/:id" component={Product}></Route>
             <Route path="/cartlist/:id" component={Cartlist}></Route>
             <Route path="/my" component={My} />
             <Route path="/peo" component={Peo} />

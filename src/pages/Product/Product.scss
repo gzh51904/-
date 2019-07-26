@@ -1,0 +1,119 @@
+.box {
+    position: relative;
+    height: 100%;
+    background: #FFFFFF;
+
+    .product_title {
+        position: absolute;
+        width: 100%;
+        height: .8rem;
+        background: #fff;
+        opacity: 0.8;
+        z-index: 999;
+        font-size: .4rem;
+        font-weight: bolder;
+
+        h3 {
+            margin-left: .133333rem;
+        }
+    }
+
+    .sliders {
+        width: 100%;
+        height: 5.666667rem;
+
+        img {
+            width: 100%;
+            height: 5.666667rem;
+        }
+    }
+
+    .hightlight {
+
+        border-top: .013333rem solid #cccccc;
+        margin: .133333rem .266667rem;
+    }
+
+    .buy_button {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 1.2rem;
+        bottom: 0;
+
+        .help {
+            float: left;
+            width: 20%;
+            height: 100%;
+            padding-top: .133333rem;
+            background: #fcf8f8;
+
+            p {
+                text-align: center;
+
+            }
+        }
+
+        .buy {
+            float: left;
+            width: 80%;
+            height: 100%;
+            background: #e96a65;
+            border-radius: .066667rem;
+
+            p {
+                text-align: center;
+                line-height: 1.2rem;
+                color: white;
+            }
+        }
+    }
+}
+
+.product_info {
+    height: auto;
+    overflow: hidden;
+
+    .hotelName {
+        margin: 0 .266667rem;
+        font-size: .333333rem;
+        color: #333333;
+    }
+
+    .tags {
+        .tag {
+            margin: 0 .133333rem;
+            font-size: .193333rem;
+            color: #666666;
+            border: .013333rem solid #666666;
+            padding: .036667rem;
+        }
+    }
+
+    .price {
+        margin-left: .266667rem;
+        margin-top: .133333rem;
+        height: .666667rem;
+
+        em {
+            color: red;
+            font-size: .4rem;
+            font-weight: bolder;
+        }
+
+        span {
+            color: red;
+            font-size: .2rem;
+        }
+
+        .salse {
+            position: relative;
+            float: right;
+            right: .266667rem;
+            font-weight: bolder;
+            color: #cccccc;
+        }
+    }
+
+
+}
