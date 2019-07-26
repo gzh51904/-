@@ -5,37 +5,35 @@
     border-bottom: 0.026667rem solid #eee;
 }
 .order-title{
-    font-size: 37px;
+    font-size: 0.45rem;
     color: #333;
     font-weight: bold;
 }
 .gp{
     color: #999;
-    font-size: 24px;
+    font-size: 0.273333rem;
     margin-top: 0.133333rem;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 .order-num-date{
     border-bottom: 0.026667rem solid #eee;
     padding-bottom: 0.566667rem;
     margin-bottom: 0.366667rem;
 }
-.cartbody-flex{
+.cartbody-flexcolor{
     display: flex;
     justify-content: space-between;
-    font-size: 25px;
-}
-.order-color{
     margin-bottom: 0.16rem;
     color: #f02f45;
-    font-size: 42px;
-    line-height: 42px;
 }
+
+    
+
 .wei{
-    font-size:35px;
+    font-size:0.4rem;
 }
 .time{
-    font-size: 25px;
+    font-size:0.25rem;
 
 }
 
@@ -44,10 +42,10 @@
 }
 .ant-steps-item-description {
     color: rgba(0, 0, 0, 0.45);
-    font-size: 24px;
+    font-size: 0.15rem;
 }
 .step{
-    margin-top: 50px;
+    margin-top: .666667rem;
 }
 .pay-btn{
     display: block;
@@ -72,12 +70,12 @@
     font-weight: bold;
 }
 .order-list-row{
-    padding-bottom: 20px;
+    padding-bottom: .266667rem;
 }
 .order-order .order-p{
     position: relative;
     color: #333;
-    font-size: 30px;
+    font-size:0.373333rem;
 }
 .order-p .anticon svg {
     // float: left;
@@ -89,7 +87,7 @@
     position: absolute;
     z-index: 1;
     left: -0.6rem;
-    top: 1px;
+    top: .1rem;
    
 }
 .order-order{
@@ -104,7 +102,7 @@
 }
 .order-order p{
     margin-bottom: 0px;
-    font-size: 25px;
+    font-size: .32rem;
     color: #999;
 }
 .tell{

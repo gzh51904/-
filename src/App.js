@@ -7,7 +7,7 @@ import 'moment/locale/zh-cn';
 import 'antd/dist/antd.css';
 
 
-import Discover from './pages/Discover/index.jsx';
+import Discover from './pages/Discover/index.js';
 import List from './pages/List';
 import Cart from './pages/Cart';
 import Mine from './pages/Mine/index.jsx';

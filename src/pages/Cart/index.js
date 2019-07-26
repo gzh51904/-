@@ -139,7 +139,7 @@ showConfirm(name) {
                             <div className='cartbody' key={item.name} className={item.can_select?'cartbody opac':'cartbody'} >
                             <div className='cartbody-item'>
                                <div className='cartbody-head'>
-                                   <div className='cartbody-flex cartbody-color'>
+                                   <div className=' cartbody-color'>
                                      <span>未支付</span>
                                      <span>￥{item.price}</span>
                                   </div>
