@@ -87,6 +87,9 @@ class Mine extends Component {
         }
         else {
             await axios.post("http://18.139.229.218:1904/reg", { username: value });
+            let { data, headers } = await axios.post("http://18.139.229.218:1904/login", { username: value });
+            localStorage.setItem("Authorization", data.data)
+            localStorage.setItem("phone", value)
             this.props.history.push("/my");
         }
     }

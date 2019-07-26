@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 
-import { Tabs } from 'antd';
+import { Tabs, Icon } from 'antd';
+
+import "./Address.scss";
 
 const { TabPane } = Tabs;
+
 
 class Address extends Component {
     constructor() {
@@ -19,13 +22,27 @@ class Address extends Component {
             }]
         }
     }
-    callback(key) {
-        console.log(key);
-    }
+
     render() {
         let { text } = this.state
         return <div>
-            
+            <div className="tab">
+                <Tabs defaultActiveKey="2">
+                    {
+                        text.map(item => {
+                            return <TabPane tab={
+                                <span>
+                                 
+                                    {item.title}
+                                </span>
+                            } key={item.id} >
+                                {item.id}
+                            </TabPane>
+                        }
+                        )
+                    }
+                </Tabs>
+            </div>
         </div>
     }
 }
