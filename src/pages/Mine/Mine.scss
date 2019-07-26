@@ -1,0 +1,91 @@
+#Mine {
+    width: 100%;
+    height: 100%;
+
+    color: #909090;
+
+    .Mine-content {
+        width: 100%;
+        height: 100%;
+        padding: .4rem;
+        box-sizing: border-box;
+    }
+
+    .Mine-title {
+        font-size: .44rem;
+        font-weight: 600;
+        position: relative;
+        line-height: 2.106667rem;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 0.933333rem;
+            height: 0.106667rem;
+            bottom: 0;
+            left: 0;
+            background: #224;
+        }
+    }
+
+    .Mine-input {
+        margin-bottom: .333333rem;
+
+        input {
+            font-size: .293333rem;
+        }
+
+        .Mine-text {
+            height: 1.28rem;
+            font-size: .293333rem;
+            margin-top: .12rem;
+        }
+
+        .Mine-get {
+            position: relative;
+
+        }
+
+        .Mine-getrandom {
+            font-size: .32rem;
+            text-align: center;
+            border: 1px solid #ef233a;
+            width: 2.4rem;
+            height: .64rem;
+            box-sizing: border-box;
+            line-height: .64rem;
+            position: absolute;
+            right: .253333rem;
+            top: .466667rem;
+            color: #ef233a;
+        }
+    }
+
+    .Mine-msg {
+        font-size: .32rem;
+        line-height: .32rem;
+        margin-bottom: 1.04rem;
+    }
+
+    .Mine-login {
+        display: flex;
+        justify-content: space-between;
+        line-height: 1.066667rem;
+
+        .Mine-info a {
+            font-size: .4rem;
+            color: #ef233a;
+        }
+
+        .Mine-res {
+            height: 1.066667rem;
+            width: 2.24rem;
+            color: #959595;
+            font-size: .4rem;
+            text-align: center;
+            border-radius: .533333rem;
+            background: #dddddd;
+            border-color: #dddddd;
+        }
+    }
+}
