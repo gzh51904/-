@@ -13,10 +13,13 @@ import Cart from './pages/Cart';
 import Mine from './pages/Mine/index.jsx';
 import Goods from './pages/Goods';
 import My from "./pages/Mine/My/index.jsx";
+import Peo from "./pages/Mine/My/Address/index.jsx"
+import axios from 'axios';
 
-import Routers from './routerMap.jsx'
 
-import "./App.css"
+
+import "./App.css";
+let lanjie=localStorage.getItem("Authorization")
 class App extends Component{
   constructor(){
     super();
@@ -37,6 +40,31 @@ class App extends Component{
     this.setState({
       current: url
     })
+
+    // 请求拦截
+axios.interceptors.request.use(config => {
+  //每次利用axios发起的请求会进入这里
+  // 添加token
+  let token = localStorage.getItem("Authorization");
+  if (config.url != "http://18.139.229.218:1904/login") {
+      config.headers.Authorization = token;
+  }
+  return config;
+}, error => {
+  // 失败的回调
+  return Promise.reject(error);
+});
+
+// 响应拦截：校验token
+axios.interceptors.response.use(response => {
+if(response.data.code==401){
+  this.props.history.push("/mine")
+}
+return response;
+},error => {
+// Do something with response error
+return Promise.reject(error);
+});
   }
   handleClick(data){
     // console.log(data);
@@ -51,43 +79,44 @@ class App extends Component{
 
   render(){
     let {navs,current} = this.state;
-    let token = this.props.token;
+    const { location: { pathname } } = this.props;
+    // 需要点击隐藏的路由全部放在下面的数组里面
+    const hideFooterPath = ['/peo',]
+    const hideFooter = hideFooterPath.includes(pathname.trim())
+
+   
+    
     return(
       <div className="App">
 
         <div className="App-main">
          {/* 路由信息 */}
           <Switch>
-            {/* 路由拦截 */}
-          {/* {Routers.map((item, index) => {
-              return <Route key={index} path={item.path} exact render={props =>
-                (!item.auth ? (<item.component {...props} />) : (token ? <item.component {...props} /> : <Redirect to={{
-                  pathname: '/mine',
-                  state: { from: props.location }
-                }} />)
-                )} />
-            })} */}
             <Route path="/discover" component={Discover} />
             <Route path="/list" component={List} />
             <Route path="/cart" component={Cart} />
             <Route path="/mine" component={Mine} />     
             <Route path="/goods:id" component={Goods}></Route>
             <Route path="/my" component={My} />
+            <Route path="/peo" component={Peo} />
+
             <Redirect from='/' to='/discover' exact></Redirect>
           </Switch>
         </div>
 
-        <div className="App-foot">
-          <Menu  className="Menu" onClick={this.handleClick} selectedKeys={[current]} mode="horizontal" >
-          {
-            navs.map(item=>(              
-                <Menu.Item  className="Menu-item" key={item.name} >
-                  <Icon className="Menu-icon" type={item.ico} />
-                  {item.title}
-                </Menu.Item>
-            ))
-          }
-          </Menu>
+        <div className="App-foot">{
+            hideFooter ? null :<Menu  className="Menu" onClick={this.handleClick} selectedKeys={[current]} mode="horizontal" >
+            {
+              navs.map(item=>(              
+                  <Menu.Item  className="Menu-item" key={item.name} >
+                    <Icon className="Menu-icon" type={item.ico} />
+                    {item.title}
+                  </Menu.Item>
+              ))
+            }
+            </Menu>
+        }
+          
 
         </div>     
       </div>

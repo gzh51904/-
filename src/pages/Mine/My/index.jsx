@@ -1,5 +1,6 @@
 import React from 'react';
 import "./My.scss";
+import axios from "axios";
 import { Icon } from "antd";
 class My extends React.Component {
     constructor() {
@@ -10,23 +11,28 @@ class My extends React.Component {
                 {
                     icon: "profile",
                     text: "我的订单",
-                    type: "right"
+                    type: "right",
+                    path: "/cart"
                 }, {
                     icon: "fund",
                     text: "优惠券",
-                    type: "right"
+                    type: "right",
+                    path: "/yhq"
                 }, {
                     icon: "user",
                     text: "账号",
-                    type: "right"
+                    type: "right",
+                    path: "/zh"
                 }, {
                     icon: "switcher",
                     text: "常用出行人及地址",
-                    type: "right"
+                    type: "right",
+                    path: "/peo"
                 }, {
                     icon: "mail",
                     text: "旅行+会员计划",
-                    type: "right"
+                    type: "right",
+                    path: "/hy"
                 }
             ],
             call: [{
@@ -41,13 +47,21 @@ class My extends React.Component {
                 type: "right"
             }]
         }
-        this.loginout=this.loginout.bind(this)
+        this.loginout = this.loginout.bind(this)
     }
-    loginout(){
-        localStorage.removeItem("username");
+    componentWillMount() {
+        if (localStorage.getItem("Authorization") == null || "") {
+            this.props.history.push("/mine")
+        }
+    }
+    loginout() {
+        localStorage.removeItem("Authorization");
         localStorage.removeItem("phone");
-
-        this.props.history.push("/mine")
+        this.props.history.push("/discover")
+    }
+    goto(path) {
+        this.props.history.push(path)
+        // console.log(path);
     }
     render() {
         let { phone, my, call } = this.state;
@@ -88,10 +102,10 @@ class My extends React.Component {
             <div className="my">
                 <div className="content">
                     <div>
-                        <ul className="my-item">
+                        <ul className="my-item" >
                             {
                                 my.map(item => {
-                                    return <li className="my-item-list" key={item.text}>
+                                    return <li className="my-item-list" key={item.text} onClick={this.goto.bind(this, item.path)}>
                                         <span className="icon"><Icon type={item.icon}></Icon></span>
                                         <span>{item.text}</span>
                                         <span className="type"><Icon type={item.type}></Icon></span>
@@ -111,11 +125,11 @@ class My extends React.Component {
                 <div className="content">
                     <ul>
                         {
-                            call.map((item,idx) => {
+                            call.map((item, idx) => {
                                 return <li className=" call-item-list" key={idx}>
                                     <span className="icon"><Icon type={item.icon}></Icon></span>
                                     <div>
-                                        <p style={{color:"#000"}}>{item.title}</p>
+                                        <p style={{ color: "#000" }}>{item.title}</p>
                                         <p>{item.language}</p>
                                     </div>
                                     <span className="type"><Icon type={item.type}></Icon></span>

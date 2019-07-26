@@ -1,6 +1,12 @@
-import Cart from "./pages/Cart/index";
+//routerMap.js
 
-// 导出需要拦截的路由
+import Cart from './pages/Cart/index';
+import My from './pages/Mine/My/index.jsx';
+import Mine from './pages/Mine/index.jsx';
+
+
 export default [
-    { path: "/cart", name: "Cart", component: Cart, auth: true }
-]
+   { path: "/cart", name: "Request", component: Cart, auth: true },
+  { path: "/my", name: "Like", component: My, auth: true },
+  { path: "/mine", name: "PopModule", component: Mine, auth: true },
+ ]
