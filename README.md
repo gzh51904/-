@@ -1,68 +1,142 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# zxyj
+###上线网址
++ http://18.139.229.218:1906/
 
-## Available Scripts
 
-In the project directory, you can run:
+### github地址
+ + git@github.com:gzh51904/wantu.git
 
-### `npm start`
+### 项目名称
++ 玩途旅行
++ 项目官网：http://www.wantu.cn/
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 负责模块说明
+```
+组长：蔡显文
+成员：詹逸敏、梁先文、简丽琼
+```
+蔡显文：注册登录页面、个人资料页面
+```
+梁先文：旅游目的地列表页、旅游目的地详情页
+```
+简丽琼：首页
+```
+詹逸敏：购物车功能、订单地址
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
++ 问题：
+    
+### 项目目录
+```
+│  App.vue
+│  main.js
+│  
+├─assets
+│  └─img
+│          consumption.png
+│          coupon.png
+│          fightGroups.png
+│          follow.png
+│          HotSaleList.png
+│          icon-back-black.png
+│          icon-order-comment.png
+│          icon-order-dispatched.png
+│          icon-order-paid.png
+│          icon-order-service.png
+│          icon-order-unpay.png
+│          loginTopBac.png
+│          msg.png
+│          myPageBackground.png
+│          seckill.png
+│          setting.png
+│          sGradeIcon1.png
+│          signtow.png
+│          team.png
+│          user-login-box.png
+│          user-login-pass.png
+│          user-login-phone.png
+│          user-login-portrait.png
+│          user-reg-compass.png
+│          user-reg-verCode.png
+│          
+├─config
+│      index.js
+│      
+├─font
+│      demo.css
+│      demo_index.html
+│      iconfont.css
+│      iconfont.eot
+│      iconfont.js
+│      iconfont.svg
+│      iconfont.ttf
+│      iconfont.woff
+│      iconfont.woff2
+│      
+├─Foot
+│      Cart.vue
+│      Classify.vue
+│      Home.vue
+│      Mine.vue
+│      
+├─Home
+│      Brand.vue
+│      Uplibao.vue
+│      
+├─img
+│      icon-back-black.png
+│      
+├─js
+├─pages
+│      AddEdit.vue
+│      Fydess.vue
+│      Fylist.vue
+│      Gooditem.vue
+│      login.vue
+│      newAddressList.vue
+│      pay.vue
+│      personal.vue
+│      product.vue
+│      
+├─rem
+│      rem.js
+│      
+├─router
+│      index.js
+│      
+└─vuex
+    │  actions.js
+    │  getters.js
+    │  index.js
+    │  mutations.js
+    │  
+    └─modules
+            cart.js
+            common.js
+            
+```
 
-### `npm test`
+## Project setup
+```
+npm install
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-### `npm run build`
+### Compiles and minifies for production
+```
+npm run build
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Run your tests
+```
+npm run test
+```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Lints and fixes files
+```
+npm run lint
+```
