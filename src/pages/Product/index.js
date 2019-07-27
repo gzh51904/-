@@ -32,16 +32,16 @@ class Product extends Component {
             description: itemList.description.description[0],
            id:itemList.product_id
         })
-        console.log(itemList);
-        console.log(sliders);
+        // console.log(itemList);
+        // console.log(sliders);
 
 
     }
     render() {
         let { itemList, sliders, hotelname, tags, price, description,id } = this.state;
-        console.log(tags);
+        // console.log(tags);
   let {dispatch}=this.props
-  console.log('prop.props',this.props);
+//   console.log('prop.props',this.props);
   
         return (
             <Fragment>

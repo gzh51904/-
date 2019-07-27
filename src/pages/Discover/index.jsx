@@ -39,6 +39,9 @@ class Discover extends Component{
             block_list_groups:block_list[0].groups[0]
         })
     }
+    gotoitem(){
+        this.props.history.push("/product/14656")
+    }
     render(){   
         let {banner_list,hot_dests,groups,block_list,block_list_categories,block_list_groups} = this.state;     
         return (
@@ -104,7 +107,7 @@ class Discover extends Component{
                     <div className="main2-box">
                         <div className="main2-item">
                             {
-                                hot_dests.map(item=><dl key={item.dest_cn_name}>
+                                hot_dests.map(item=><dl key={item.dest_cn_name} onClick={this.gotoitem.bind(this)}>
                                         <dt><img src={item.cover_url} alt={item.dest_cn_name}/></dt>
                                         <dd>{item.dest_cn_name}</dd>
                                         <dd>{item.dest_en_name}</dd>
@@ -120,7 +123,7 @@ class Discover extends Component{
                     <div className="main3-box">
                         <div className="main3-item">
                             {
-                                item.products.map(item1=><dl key={item1.product_id}>
+                                item.products.map(item1=><dl onClick={this.gotoitem.bind(this)} key={item1.product_id}>
                                 <dt><img src={item1.image_url} alt=""/></dt>
                                 <dd>{item1.name}</dd>
                                 <dd style={{fontSize:".24rem",color:"#999"}}>{item1.summary}</dd>

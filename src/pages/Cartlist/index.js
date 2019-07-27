@@ -6,7 +6,7 @@ const { Step } = Steps;
 class Cartlist extends React.Component{
    
     render(){
-        console.log('dess',this.props);
+        // console.log('dess',this.props);
         let {list}=this.props
         
         

@@ -32,7 +32,7 @@ class Cart extends React.Component{
         this.goto=this.goto.bind(this)
     }
     handleClick = e => {
-        console.log('click ', e);
+        // console.log('click ', e);
         this.setState({
           current: e.key,
         });
@@ -49,7 +49,7 @@ class Cart extends React.Component{
          if (r==true)
      {
   alert("订单已取消");
-  console.log('this',this);
+  // console.log('this',this);
   let{cartlist}=this.props;
    cartlist.map(item=>{
        if(item.name==name){
@@ -76,25 +76,25 @@ showConfirm(name) {
       title: '删除订单?',
       content: '确定删除订单吗？删除后订单将不可恢复',
       onOk() {
-        console.log('OK');
+        // console.log('OK');
       //删除订单
         dispatch({type:'remove_from_cart',payload:name})
         //删除成功提示
         message.success('删除成功');
       },
       onCancel() {
-        console.log('Cancel');
+        // console.log('Cancel');
       },
     });
   }
 
   //跳转订单详情页
   goto(id){
-      console.log('id',id)
-      console.log(123);
-      console.log('goto',this.props);
+      // console.log('id',id)
+      // console.log(123);
+      // console.log('goto',this.props);
       let {history}=this.props;
-      console.log(history)
+      // console.log(history)
     //   history.push({
     //     pathname: '/cartlist',
     //     search: '?id='+id,
@@ -112,7 +112,7 @@ showConfirm(name) {
     render(){
         let {navs,current,golist} = this.state;
 
-        console.log('cart.props',this.props);
+        // console.log('cart.props',this.props);
         //遍历出redux中的数据
         let{cartlist}=this.props
       

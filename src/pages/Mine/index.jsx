@@ -98,9 +98,8 @@ class Mine extends Component {
         if (this.refs.username.state.value == undefined) {
             return alert("请输入手机号码在获取验证码")
         }
-        alert("10秒后验证码在控制台")
         setTimeout(() => {
-            console.log(sj());
+            alert(sj())
         }, 2000);
     }
     render() {

@@ -72,7 +72,7 @@ class List extends Component {
 
     }
     async onSelect_subs(code) {
-        console.log(code);
+        // console.log(code);
     }
     render() {
         let { list, hots, subs } = this.state;

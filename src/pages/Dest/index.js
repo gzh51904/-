@@ -20,7 +20,7 @@ class Dest extends Component {
         this.goto_product = this.goto_product.bind(this);
     }
     async componentDidMount() {
-        console.log('state-afer:', this.state.list.length);
+        // console.log('state-afer:', this.state.list.length);
         let { data: { data } } = await api.get('/city_code');
 
         let list = data[0].itemList[0];
@@ -72,7 +72,7 @@ class Dest extends Component {
 
     render() {
         let { imgurl, tabs, products, cn_name, city_name } = this.state;
-        console.log("product:",products);
+        // console.log("product:",products);
         
 
         return (
