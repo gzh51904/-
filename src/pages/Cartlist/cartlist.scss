@@ -108,3 +108,14 @@
 .tell{
     border-top: 0.026667rem solid #f5f5f5;
 }
+.pri{
+    display: flex;
+    justify-content: space-between;
+}
+.pri span{
+    color: #f02f45;
+}
+.topri{
+    font-size: .566667rem;
+    line-height: .566667rem;
+}
