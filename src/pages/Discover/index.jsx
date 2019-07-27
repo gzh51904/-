@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Carousel } from 'antd';
+import { Carousel,Button } from 'antd';
 import {api} from '../../utils';
+
 
 import './base.css'
 import './Discover.scss';
@@ -23,10 +24,10 @@ class Discover extends Component{
         data=data[0];
         // console.log(data);
         let {banner_list,block_list,groups,hot_dests}=data;
-        console.log("banner_list",banner_list);
-        console.log("block_list",block_list);
-        console.log("groups",groups);
-        console.log("hot_dests",hot_dests);
+        // console.log("banner_list",banner_list);
+        // console.log("block_list",block_list);
+        // console.log("groups",groups);
+        // console.log("hot_dests",hot_dests);
 
         // 设置轮播图
         this.setState({
@@ -45,9 +46,9 @@ class Discover extends Component{
                 <div className="d-banner">
                     <div className="d-header">
                         <h1>玩途旅行</h1>
-                        <div className="search"><span></span><input type="text" name="" placeholder="搜索商品/目的地"/></div>                       
+                        <div className="search"><Button icon="search" className="searchicon"/><input type="text" name="" placeholder="搜索商品/目的地"/></div>                       
                     </div>
-                    <Carousel autoplay >
+                    <Carousel autoplay>
                         {
                             banner_list.map(item=><div key={item.title}>
                                     <img src={item.h5_image_url} alt="item.title"/>
@@ -61,14 +62,26 @@ class Discover extends Component{
                     <h2 className="text-ellipsis">开始计划下一次出行</h2>
                     <div className="main1-grid">
                         <div className="main1-grid-c">
-                            <div className="gird-c">
+                            <div className="gird-c" style={{backgroundColor: "rgb(233, 106, 101)"}}>
                                 <h3>周边游</h3>
                                 <p>国内城市周边</p>
                             </div>
-                            <div className="gird-c"></div>
-                            <div className="gird-c"></div>
-                            <div className="gird-c"></div>
-                            <div className="gird-c"></div>
+                            <div className="gird-c"style={{backgroundColor: "rgb(49, 131, 161)"}}>
+                                <h3>机票预订</h3>
+                                <p>国际国内机票</p>
+                            </div>
+                            <div className="gird-c" style={{backgroundColor: "rgb(32, 197, 174)"}}>
+                                <h3>海外吃喝玩乐</h3>
+                                <p>海外自由行</p>
+                            </div>
+                            <div className="gird-c">
+                                <h3>你未曾感受的日本</h3>
+                                <p>玩途 X 星野</p>
+                            </div>
+                            <div className="gird-c" style={{backgroundColor: "rgb(246, 167, 54)"}}>
+                                <h3>旅行通票</h3>
+                                <p>客栈旅行通行证</p>
+                            </div>
                         </div>
                     </div>                    
                     <div className="main-item">
@@ -110,10 +123,15 @@ class Discover extends Component{
                                 item.products.map(item1=><dl key={item1.product_id}>
                                 <dt><img src={item1.image_url} alt=""/></dt>
                                 <dd>{item1.name}</dd>
-                                {   
+                                <dd style={{fontSize:".24rem",color:"#999"}}>{item1.summary}</dd>
+                                <dd style={{ position: "absolute",bottom: "15%"}}>
+                                    {
+                                        // console.log(item1.tags)
+                                        item1.tags.map(item5=><span style={{background:"f2f2f2",padding:"0 5px",fontSize:".24rem"}} key={item5.name}>{item5.name}</span>)
+                                        
+                                    }
                                     
-                                    item.products.summary?<dd style={{fontSize:"24px"}}>新加坡必去</dd>:<dd></dd>
-                                }
+                                </dd>
                                 <dd>￥<em>{item1.min_price}</em>起</dd>
                             </dl>)
                             }
