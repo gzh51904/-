@@ -2,7 +2,7 @@
 
 import {createStore} from 'redux'
 
-import reducer from './reducer'
+import reducer from './reducer/index'
 
 //创建store
 //定义state的修改逻辑，reducer

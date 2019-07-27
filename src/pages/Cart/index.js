@@ -5,7 +5,7 @@ import { Menu, Icon,Button,Modal,message} from 'antd';
 import './Cart.scss'
 
 import {connect} from 'react-redux'
-import { fail } from 'assert';
+// import { fail } from 'assert';
 const { confirm } = Modal;
 
 class Cart extends React.Component{
@@ -176,7 +176,7 @@ showConfirm(name) {
 
 Cart=connect((state)=>{
     return{
-        cartlist:state.goodslist
+        cartlist:state.cart.goodslist
     }
 })(Cart)
 export default Cart;

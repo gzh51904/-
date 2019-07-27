@@ -1,6 +1,39 @@
-span{
+.span-1 {
     font-size: .32rem;
 }
-.ant-tabs-tabpane{
+
+.ant-tabs-tabpane {
     font-size: .32rem;
+}
+
+.ant-col {
+    width: 100%;
+    height: 2.666667rem;
+    font-size: .32rem;
+}
+
+
+
+.Address {
+    div {
+        font-size: .533333rem;
+    }
+}
+
+.show {
+    display: none;
+
+
+}
+
+.addressUl {
+    li {
+        width: 100%;
+        height: 1.386667rem;
+        background: #fff;
+        color: #000;
+        margin-bottom: 20px;
+        text-align: center;
+        line-height: 1.386667rem;
+    }
 }

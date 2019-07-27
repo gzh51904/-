@@ -15,7 +15,8 @@ import Goods from './pages/Goods';
 import Dest from './pages/Dest';
 import Cartlist from './pages/Cartlist';
 import My from "./pages/Mine/My/index.jsx";
-import Peo from "./pages/Mine/My/Address/index.jsx"
+import Peo from "./pages/Mine/My/Address/index.jsx";
+import peo_info from "./pages/Mine/My/Info/index.jsx"
 import axios from 'axios';
 
 
@@ -103,6 +104,7 @@ return Promise.reject(error);
             <Route path="/cartlist/:id" component={Cartlist}></Route>
             <Route path="/my" component={My} />
             <Route path="/peo" component={Peo} />
+            <Route path="/peo_info" component={peo_info} />
 
             <Redirect from='/' to='/discover' exact></Redirect>
           </Switch>
