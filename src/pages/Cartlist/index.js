@@ -1,20 +1,26 @@
 import React from 'react';
 import { Steps ,Icon} from 'antd';
+import {connect} from 'react-redux';
 import './cartlist.scss'
 const { Step } = Steps;
 class Cartlist extends React.Component{
+   
     render(){
+        console.log('dess',this.props);
+        let {list}=this.props
+        
+        
         return(
             <div>
                 <div className='order-head'>
                     <div className='order-title'>
-                    上海东京全日空直飞5天4晚自由行（2晚轻井泽虹夕诺雅+2晚东京椿山庄酒店）
+                   {list[0].name}
                         </div>
                         <div className='order-num-date'>
                                      <p className='gp'>出行日期：2019-08-14</p>
                                      <p className='gp'>订单日期: 2019-07-25 17:33:11</p>
                         </div>
-                    <div className='cartbody-flex order-color'>
+                    <div className='cartbody-flexcolor'>
                                      <span className='wei'>未支付</span>
                                      <span  className='time'>请在2019-07-25 18:03:11前支付</span>
                     </div>
@@ -68,7 +74,7 @@ class Cartlist extends React.Component{
                     </p>
                     <p>日期: 2019-08-14</p>
                     <p>数量: <span>出行人 x 1  </span></p>
-                    <p>套餐选择: 往返机票+2晚轻井泽虹夕诺雅+2晚东京椿山庄酒店</p>
+                    <p className='pri'><span>总额</span><span className='topri'>￥{list[0].price}</span></p>
                 </div>
                 </div>
                 {/* 使用信息及退还 */}
@@ -108,4 +114,9 @@ class Cartlist extends React.Component{
         )
     }
 }
+Cartlist=connect((state)=>{
+        return{
+            list:state.goodslist
+        }
+})(Cartlist)
 export default Cartlist;

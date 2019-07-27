@@ -4,21 +4,21 @@
 }
 .carthead{
     // background-color: red;
-    padding: 0 20px;
-    padding-top: 0.8rem;
+    padding: 0 .266667rem;
+    padding-top: 0.6rem;
     background-color: #fff;
 }
 .carthead h2{
     // padding-bottom: 0.32rem;
     position: relative;
-    font-size: .853333rem;
+    font-size: .753333rem;
     font-weight: normal;
     padding-left: .266667rem;
 }
 .ant-menu-horizontal {
     display: flex;
     justify-content: space-around;
-   font-size: 30px;
+   font-size: .35rem;
 }
 .carthead .ant-menu-item-selected{
     padding-bottom: 0.32rem;
@@ -49,19 +49,22 @@
 .cartbody-flex{
     display: flex;
     justify-content: space-between;
-    font-size: 25px;
+    font-size: 0.273333rem;
+    color: #999
 }
 .cartbody-color{
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 0.16rem;
     color: #f02f45;
-    font-size: 42px;
-    line-height: 42px;
+    font-size: .4rem;
+     line-height: .4rem;
 }
 
 
 .cartbody-body  h3{
     margin-bottom: 0.266667rem;
-    font-size: 30px;
+    font-size:0.35rem;
     -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -71,9 +74,9 @@
 }
 .gp{
     color: #999;
-    font-size: 24px;
+    font-size: 0.25rem;
     margin-top: 0.133333rem;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .cartbody-foot{
@@ -88,14 +91,14 @@
     // -webkit-flex: 1;
     flex: 1;
     outline: none;
-    height: 70px;
-    line-height: 70px;
+    height: 0.933333rem;
+    line-height: 0.933333rem;
     border-radius: 0.053333rem;
     text-align: center;
 }
 .succ{
     background-color: #f02f45;
-    border: 1px solid #f02f45;
+    border: .013333rem solid #f02f45;
     color: #fff;
     margin-left: 0.4rem;
 }
@@ -104,7 +107,7 @@
     position: absolute;
     right: 0;
     color: #e96a65;
-    font-size:28px;
+    font-size:0.32rem;
 }
 
 .none{
@@ -121,7 +124,7 @@
 .ant-modal{
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 28%;
     transform: translate(-50%,-50%);
     // // position: relative;
     // padding-top: 0.64rem;
@@ -149,27 +152,27 @@
     width: 74%;
 }
 .ant-modal-confirm-body .ant-modal-confirm-title{
-    font-size: 35px;
-    line-height: 35px;
+    font-size: .466667rem;
+    line-height:.466667rem;
 }
 .ant-modal-confirm-body .ant-modal-confirm-content {
-    font-size: 27px;
+    font-size: .36rem
 }
 .ant-modal-content{
-    width: 480px;
+    width: 6.4rem
 }
 .ant-modal-confirm .ant-modal-body{
-    padding:30px 0;
+    padding:.4rem 0;
 }
 .ant-modal-confirm-btns .ant-btn{
-    font-size: 40px;
+    font-size: .533333rem;
     height: 100%;
 
 }
 //删除时信息提示
 .ant-message{
     top:80%;
-    font-size: 30px;
+    font-size: .35rem;
 }
 .ant-message-notice-content{
     background: black;

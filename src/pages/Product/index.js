@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Carousel, Icon } from 'antd';
+import {connect} from 'react-redux';
 import { api } from '../../utils';
 import './Product.scss';
 class Product extends Component {
@@ -10,7 +11,8 @@ class Product extends Component {
             sliders: [],
             hotelname: '',
             tags: [],
-            price: ''
+            price: '',
+            id:''
         }
 
 
@@ -27,7 +29,8 @@ class Product extends Component {
             hotelname: itemList.description.name,
             tags,
             price: itemList.show_prices,
-            description: itemList.description.description[0]
+            description: itemList.description.description[0],
+           id:itemList.product_id
         })
         console.log(itemList);
         console.log(sliders);
@@ -35,9 +38,11 @@ class Product extends Component {
 
     }
     render() {
-        let { itemList, sliders, hotelname, tags, price, description } = this.state;
+        let { itemList, sliders, hotelname, tags, price, description,id } = this.state;
         console.log(tags);
-
+  let {dispatch}=this.props
+  console.log('prop.props',this.props);
+  
         return (
             <Fragment>
                 <div className={tags.length > 0 ? 'box' : 'none'}>
@@ -91,7 +96,9 @@ class Product extends Component {
                             <Icon type="message" style={{ width: '100%' }} />
                             <p>咨询</p>
                         </div>
-                        <div className='buy'>
+                        <div className='buy' onClick={()=>{
+                       dispatch({type:'add_to_cart',payload:{id:id,name:hotelname,price:price.price,can_select:false}})         
+                            }} >
                             <p>立即购买</p>
                         </div>
 
@@ -107,4 +114,10 @@ class Product extends Component {
 
 
 }
+
+Product=connect((state)=>{
+    return{
+        list:state.goodslist
+    }
+})(Product)
 export default Product;
