@@ -17,6 +17,7 @@ class Dest extends Component {
             none: false
         }
         this.tabs_select = this.tabs_select.bind(this);
+        this.goto_product = this.goto_product.bind(this);
     }
     async componentDidMount() {
         console.log('state-afer:', this.state.list.length);
@@ -37,12 +38,12 @@ class Dest extends Component {
             city_name: list.base_info.city_name
 
         })
-       
+
 
 
     }
     tabs_select(idx) {
-       
+
         if (idx === 1) {
             this.none = true;
         } else if (idx === 0) {
@@ -53,21 +54,35 @@ class Dest extends Component {
             isSelect: idx,
             none: this.none
         })
-  
+
 
 
     }
+    goto_product(id) {
+
+        let { history } = this.props;
+
+        let pathname = '/product/'+Number(id);
+
+        history.push({
+            pathname
+        })
+
+    }
+
     render() {
         let { imgurl, tabs, products, cn_name, city_name } = this.state;
-  
+        console.log("product:",products);
+        
+
         return (
-            <div style={{ position: 'relative'}}>
+            <div style={{ position: 'relative' }}>
                 <div className={tabs.length > 0 ? 'box' : 'none'}>
                     <div className='box_img'>
                         <img src={imgurl} className='img' alt={imgurl} />
                         <div className='title'>
-                            <h4>{cn_name}</h4>
-                            <p>{city_name}</p>
+                            <h4 className='dest_h4'>{cn_name}</h4>
+                            <p className='dest_p'>{city_name}</p>
                         </div>
                     </div>
                     <div className='tab_select'>
@@ -84,9 +99,8 @@ class Dest extends Component {
                         {
                             products.map((item, idx) => {
                                 return (
-                                    <div className='alias' key={idx}>
+                                    <div className='alias' key={idx} onClick={this.goto_product.bind(this,item.product_id)}>
                                         <div className='products_img'>
-
                                             {
                                                 item.images.map(item => {
                                                     return <img src={item.image_url} style={{ width: '100%', height: '100%' }} alt={item.id} />

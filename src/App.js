@@ -13,6 +13,7 @@ import Cart from './pages/Cart';
 import Mine from './pages/Mine/index.jsx';
 import Goods from './pages/Goods';
 import Dest from './pages/Dest';
+import Product from  './pages/Product';
 import Cartlist from './pages/Cartlist';
 import My from "./pages/Mine/My/index.jsx";
 import Peo from "./pages/Mine/My/Address/index.jsx";
@@ -101,6 +102,7 @@ return Promise.reject(error);
             <Route path="/mine" component={Mine} />     
             <Route path="/goods:id" component={Goods}></Route>
             <Route path="/dest" component={Dest}></Route>
+            <Route path="/product/:id" component={Product}></Route>
             <Route path="/cartlist/:id" component={Cartlist}></Route>
             <Route path="/my" component={My} />
             <Route path="/peo" component={Peo} />
